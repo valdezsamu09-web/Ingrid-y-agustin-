@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Para Ingrid 🤍 — Agustín</title>
+<style>
+*{box-sizing:border-box} html,body{margin:0;min-height:100%;font-family:Arial,Helvetica,sans-serif;background:#07030d;color:#fff}
+body{overflow-x:hidden}
+.stars,.stars:before,.stars:after{position:fixed;inset:0;content:"";pointer-events:none}
+.stars{background:
+ radial-gradient(circle at 15% 20%,rgba(190,90,255,.75) 0 2px,transparent 4px),
+ radial-gradient(circle at 80% 30%,rgba(190,90,255,.65) 0 2px,transparent 4px),
+ radial-gradient(circle at 35% 70%,rgba(220,110,255,.7) 0 2px,transparent 4px),
+ radial-gradient(circle at 70% 80%,rgba(180,80,255,.65) 0 2px,transparent 4px);
+ animation:float 8s ease-in-out infinite alternate}
+.stars:before{background:radial-gradient(circle at 50% 40%,rgba(116,0,255,.18),transparent 45%);filter:blur(12px)}
+@keyframes float{to{transform:translateY(-12px)}}
+.screen{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;position:relative}
+.hero{width:min(680px,100%);text-align:center;position:relative;z-index:1}
+.badge{display:inline-block;padding:12px 22px;border:1px solid #4a1468;border-radius:30px;color:#d39cff;background:rgba(40,0,65,.28);font-weight:700;margin-bottom:48px}
+h1{font-size:clamp(54px,15vw,92px);line-height:.9;margin:0;font-weight:900;letter-spacing:-4px}
+h1 .pink{display:block;background:linear-gradient(90deg,#5d00c9,#ff006e);-webkit-background-clip:text;color:transparent}
+.sub{font-size:clamp(19px,5vw,28px);color:#aaa1b6;line-height:1.35;margin:28px auto 42px;max-width:610px}
+.btn{display:block;width:100%;padding:20px;border:0;border-radius:22px;color:#fff;font-size:22px;font-weight:800;cursor:pointer;background:linear-gradient(90deg,#4700a8,#85002f);box-shadow:0 10px 40px rgba(117,0,255,.22)}
+.catalog{margin-top:14px;background:transparent;border:1px solid #24182e;box-shadow:none}
+.hide{display:none!important}
+
+.love{background:#f8efe2;color:#37322f;min-height:100vh;position:relative;overflow:hidden}
+.top{padding:28px 20px 8px;text-align:center}
+.top h2{font-size:25px;margin:4px 0 0}
+.top p{margin:8px 0;color:#756e68}
+.treebox{position:relative;max-width:650px;margin:0 auto;height:58vh;min-height:430px}
+.tree{position:absolute;right:1%;bottom:0;width:min(76%,510px);max-height:100%;object-fit:contain;filter:drop-shadow(0 12px 12px rgba(60,40,20,.15))}
+.photo{position:absolute;left:4%;bottom:8%;width:34%;max-width:220px;aspect-ratio:4/5;object-fit:cover;border-radius:22px;box-shadow:0 18px 35px rgba(60,40,20,.2);transform:rotate(-4deg);border:7px solid #fff}
+.text{max-width:650px;margin:-5px auto 0;padding:0 24px 45px}
+.text h3{font-size:28px;margin:0 0 12px}
+.text .msg{font-size:20px;line-height:1.5}
+.quote{font-style:italic}
+.counter{font-size:20px;margin-top:22px;font-weight:700}
+.counter span{font-variant-numeric:tabular-nums}
+.petal{position:fixed;top:-30px;width:12px;height:18px;background:#fff;border-radius:70% 20% 70% 20%;opacity:.9;animation:fall linear infinite;pointer-events:none}
+@keyframes fall{to{transform:translate3d(120px,110vh,0) rotate(520deg)}}
+.back{position:fixed;top:14px;left:14px;z-index:5;border:0;background:rgba(255,255,255,.7);border-radius:50%;width:42px;height:42px;font-size:20px}
+@media(max-width:520px){
+ .treebox{height:55vh;min-height:400px}
+ .tree{width:78%;right:-2%}
+ .photo{width:37%;left:3%;bottom:12%}
+ .text h3{font-size:24px}
+}
+</style>
+</head>
+<body>
+<div id="home" class="screen">
+  <div class="stars"></div>
+  <main class="hero">
+    <div class="badge">✨ Diseños mágicos e interactivos</div>
+    <h1>Crea<span class="pink">Dedicatorias</span> inolvidables.</h1>
+    <div class="sub">Personaliza, anima con música y comparte en redes sociales sin escribir código.</div>
+    <button class="btn" onclick="openLove()">⚡ Empezar Ahora</button>
+    <button class="btn catalog" onclick="openLove()">▷ Ver Catálogo</button>
+  </main>
+</div>
+
+<div id="love" class="love hide">
+  <button class="back" onclick="goHome()">←</button>
+  <section class="top">
+    <p>Para mi persona favorita 🤍</p>
+    <h2>Ingrid &amp; Agustín</h2>
+  </section>
+  <section class="treebox">
+    <img class="tree" src="lirio_arbol.png" alt="Árbol de lirios">
+    <img class="photo" src="foto.jpg" alt="Ingrid y Agustín">
+  </section>
+  <section class="text">
+    <h3>Flores de lirios para mi persona favorita 🌸</h3>
+    <p class="msg quote">“Si todo esto es una ilusión de un sueño mío, me dormiría para siempre para estar con vos toda mi vida, porque sos la realidad que quiero para siempre.”</p>
+    <p class="msg"><strong>Te amo mi amor ❤️</strong></p>
+    <p class="msg"><strong>Feliz 9 meses 🥺</strong></p>
+    <div class="counter">Desde nuestra primera salida: <span id="counter"></span></div>
+  </section>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
